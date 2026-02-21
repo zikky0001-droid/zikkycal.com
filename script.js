@@ -148,12 +148,12 @@ function typeBootMessage() {
   if (bootIndex < bootMessages.length) {
     bootText.innerHTML += bootMessages[bootIndex] + '\n';
     bootIndex++;
-    setTimeout(typeBootMessage, 200);
+    setTimeout(typeBootMessage, 50);
   } else {
     setTimeout(() => {
       bootScreen.style.display = 'none';
       enterBtn.style.display = 'block';
-    }, 1000);
+    }, 800);
   }
 }
 
