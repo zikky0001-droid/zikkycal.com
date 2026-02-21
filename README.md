@@ -1,16 +1,15 @@
 <div align="center">
   
   <!-- Matrix Capsule Render - NEW -->
-  <img src="https://capsule-render.vercel.app/api?type=speech&height=200&color=gradient&text=WELCOME%20TO%20🥳&animation=blinking&fontAlign=36&fontAlignY=36&descAlign=62&reversal=false&textBg=false&fontColor=00FFFF&desc=ZIKKY%20MATRIX%20CALCULATOR" width="100%">
+  <img src="https://capsule-render.vercel.app/api?type=speech&height=200&color=gradient&text=MATRIX%20CALCULATOR&animation=blinking&fontAlign=42&fontAlignY=36&descAlign=32&reversal=false&textBg=false&fontColor=00FFFF&desc=SELF%20MADE%20BY%20ZIKKY©%202026" width="80%">
 
   <!-- Original Typing Animation - PRESERVED -->
-  <img src="https://readme-typing-svg.herokuapp.com/?font=Fira+Code&size=25&duration=3000&color=00FF00&background=000000&center=true&vCenter=true&width=600&lines=ZIKKY.CAL+%F0%9F%8C%9F;%F0%9F%94%A5+The+Best+Simple+Calculator+Across+The+Globe;%F0%9F%92%BB+Crafted+by+ZIKKYSTAR%20%F0%9F%A5%82;%E2%9A%A1+Next-Generation+Reliable" alt="Typing Animation">
+  <img src="https://readme-typing-svg.herokuapp.com/?font=Fira+Code&size=25&duration=3000&color=00FF00&background=000000&center=true&vCenter=true&width=700&lines=ZIKKY+MATRIX+CALCULATOR+%F0%9F%8C%9F;%F0%9F%94%A5+The+Best+Simple+Calculator+Across+The+Globe;%F0%9F%92%BB+Crafted+by+DEV+ZIKKY;%E2%9A%A1+Next-Generation+Reliable" alt="Typing Animation">
   
   <!-- Matrix Badge Row - ENHANCED -->
   <p align="center">
     <img src="https://img.shields.io/badge/Version-2.0.0-00FFFF?style=for-the-badge&logo=codefactor&logoColor=white&labelColor=black" />
     <img src="https://img.shields.io/badge/BUILD-2026-00FFFF?style=for-the-badge&logo=githubactions&logoColor=white&labelColor=black" />
-    <img src="https://img.shields.io/badge/STATUS-MATRIX--READY-00FFFF?style=for-the-badge&logo=matrix&logoColor=white&labelColor=black" />
     <img src="https://img.shields.io/github/stars/zikky0001-droid/zikkycal.com?style=for-the-badge&logo=starship&color=00FFFF&labelColor=black" />
     <img src="https://img.shields.io/github/forks/zikky0001-droid/zikkycal.com?style=for-the-badge&logo=forgejo&color=00FFFF&labelColor=black" />
   </p>
@@ -19,13 +18,6 @@
   <p align="center">
     <a href="https://github.com/zikky0001-droid/zikkycal.com">
       <img alt="Zikkycal docs" height="350" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShXydRXBzevNkTBZ0FkIQuPLzbxNvv-Eb3HC4ATql0gA&s=10" style="border-radius: 20px; border: 2px solid #00FFFF; box-shadow: 0 0 50px #00FFFF; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-    </a>
-  </p>
-
-  <!-- Original Fork Typing - PRESERVED -->
-  <p align="center">
-    <a href="https://git.io/typing-svg">
-      <img src="https://readme-typing-svg.herokuapp.com?font=Rockstar-ExtraBold&color=blue&lines=PLEASE+FORK+THE+REPO+FOR+MORE+UPDATES" alt="Typing SVG">
     </a>
   </p>
 </div>
@@ -65,11 +57,6 @@
 <!-- Matrix Divider -->
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
-<!-- Project Overview Section -->
-<h1 align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=40&duration=4000&color=00FFFF&background=000000&center=true&vCenter=true&width=800&lines=⚡+ZIKKY+MATRIX+CALCULATOR+⚡;🔥+THE+MOST+POWERFUL+CALCULATOR;💻+DEVELOPED+BY+ZIKKYSTAR;🚀+NEXT-GEN+MATRIX+SOLUTIONS" alt="Main Typing Animation">
-</h1>
-
 <!-- Feature Table - ENHANCED -->
 <div align="center">
 
@@ -101,18 +88,6 @@
 </div>
 
 <br>
-
-<!-- Original Account Section - PRESERVED -->
-<h4 align="left">
-  <img src="https://img.icons8.com/fluency/48/matrix.png" width="30" height="30" style="vertical-align: middle;"/> 
-  ᴍʏ ᴀᴄᴄᴏᴜɴᴛ
-</h4>
-
-<p align="left">
-  <a href='https://github.com/zikky0001-droid' target="_blank">
-    <img alt='Github' src='https://img.shields.io/badge/-Github%20Follow-000000?style=for-the-badge&logo=github&logoColor=00FFFF'/>
-  </a>
-</p>
 
 <!-- Matrix Divider -->
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
@@ -187,7 +162,7 @@
     <a href="https://discord.gg/S6jt3v7C"><img src="https://img.shields.io/badge/Discord-000000?style=for-the-badge&logo=discord&logoColor=00FFFF"/></a>
     <a href="https://www.instagram.com/devzikky"><img src="https://img.shields.io/badge/Instagram-000000?style=for-the-badge&logo=instagram&logoColor=00FFFF"/></a>
     <a href="https://tiktok.com/@devzikky"><img src="https://img.shields.io/badge/TikTok-000000?style=for-the-badge&logo=tiktok&logoColor=00FFFF"/></a>
-    <a href="https://youtube.com/@Zikkystar"><img src="https://img.shields.io/badge/YouTube-000000?style=for-the-badge&logo=youtube&logoColor=00FFFF"/></a>
+    <a href="https://youtube.com/Zikkystar"><img src="https://img.shields.io/badge/YouTube-000000?style=for-the-badge&logo=youtube&logoColor=00FFFF"/></a>
   </p>
 
   <!-- Original Channels Section - PRESERVED -->
@@ -235,9 +210,6 @@
   <!-- Original Glowing Footer -->
   <img src="https://i.imgur.com/dBaSKWF.gif" height="40" width="100%">
 
-  <!-- Enhanced Footer Typing -->
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=20&duration=3000&color=00FFFF&background=000000&center=true&vCenter=true&width=600&lines=Zikky.cal+Calculator+Edition+by+ZIKKY+🥂;⚡+The+Best+Simple+Calculator+All+Over+The+Globe;🔒+AES-256+ENCRYPTED+CONNECTION;🌐+MATRIX+TERMINAL+v2.0" alt="Footer Animation">
-
   <!-- Project Status -->
   <pre align="center">
 ╔══════════════════════════════════════╗
@@ -284,70 +256,7 @@
   <sub>🔴 SYSTEM ONLINE • QUANTUM-ENABLED • MATRIX-READY</sub>
   
   <br>
-  <sub>⚡ Built with ❤️ by ZIKKYSTAR ⚡</sub>
+  <sub>⚡ Built with ❤️ by DEV•ZIKKY TECH ⚡</sub>
 
 </div>
 
-<!-- Matrix Rain Effect CSS -->
-<style>
-  @keyframes glow {
-    0% { text-shadow: 0 0 10px #00FFFF; }
-    50% { text-shadow: 0 0 30px #00FFFF; }
-    100% { text-shadow: 0 0 10px #00FFFF; }
-  }
-  h1, h2, h3 {
-    animation: glow 3s infinite;
-  }
-  body {
-    background-color: #0a0a0a;
-    color: #00FFFF;
-    font-family: 'Fira Code', monospace;
-  }
-  hr {
-    border: 1px solid #00FFFF;
-    box-shadow: 0 0 20px #00FFFF;
-  }
-  img {
-    transition: all 0.3s ease;
-    border-radius: 15px;
-  }
-  img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 50px #00FFFF !important;
-  }
-  table {
-    border-collapse: separate;
-    border-spacing: 20px;
-  }
-  td {
-    background: rgba(0, 255, 255, 0.05);
-    border: 2px solid #00FFFF;
-    border-radius: 20px;
-    padding: 25px;
-    transition: all 0.3s ease;
-  }
-  td:hover {
-    background: rgba(0, 255, 255, 0.15);
-    box-shadow: 0 0 40px #00FFFF;
-    transform: translateY(-5px);
-  }
-  a {
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
-  a:hover {
-    filter: brightness(1.3);
-    transform: translateY(-3px);
-    display: inline-block;
-  }
-  pre {
-    color: #00FFFF;
-    text-shadow: 0 0 10px #00FFFF;
-    font-family: 'Fira Code', monospace;
-    font-size: 14px;
-    background: rgba(0,0,0,0.5);
-    padding: 20px;
-    border-radius: 15px;
-    border: 1px solid #00FFFF;
-  }
-</style>
