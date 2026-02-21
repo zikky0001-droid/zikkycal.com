@@ -2,14 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dev•ZIKKY Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Dev•ZIKKY | MATRIX CALCULATOR</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="manifest" href="/manifest.json">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-  <!-- Theme Toggle -->
+<!-- BOOT SEQUENCE -->
+<div id="boot">
+  <div id="bootText"></div>
+</div>
+
+<!-- WELCOME SCREEN -->
+<div id="welcome">
+  <h1>⚡ ZIKKY MATRIX CALCULATOR ⚡</h1>
+  <button id="enterBtn">🎉 ENTER THE MATRIX 👨‍💻</button>
+</div>
+
+<!-- MATRIX RAIN CANVAS -->
+<canvas id="matrix"></canvas>
+
+<!-- STARFIELD CANVAS -->
+<canvas id="stars"></canvas>
+
+<!-- ECLIPSE CORE -->
+<div class="eclipse" id="eclipse"></div>
+
+<!-- CURSOR GLOW -->
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- Theme Toggle -->
 <div class="theme-toggle">
   <div class="toggle-container">
     <span class="toggle-label">🌙</span>
@@ -18,213 +46,284 @@
   </div>
 </div>
 
-  <!-- Hamburger toggle -->
-  <button id="menu-toggle" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false" aria-label="Open primary menu">
-    <span class="dots" aria-hidden="true">
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-    </span>
-    <span><h3>MENU<br>INFO</h3></span>
-  </button>
+<!-- Hamburger toggle - REDESIGNED -->
+<button id="menu-toggle" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+  <div class="hamburger-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="menu-badge">
+    <i class="fas fa-calculator"></i>
+    <span>MENU</span>
+  </div>
+</button>
 
-  <!-- Navigation -->
-  <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation" aria-hidden="true">
-    <div class="nav-wrap">
-      <ul id="primary-menu" class="menu" role="menu">
-        <li role="none"><a role="menuitem" href="#home">Home</a></li>
-        <li role="none"><a role="menuitem" href="https://github.com/zikky0001-droid/zikkycal.com" target="_blank" rel="noopener">Services</a></li>
-        <li role="none"><a id="about-link" role="menuitem" href="#about">About</a></li>
-        <li role="none"><a id="license-link" role="menuitem" href="#license">License</a></li>
-      </ul>
-
-      <div class="menu-actions" aria-label="Menu actions">
-        <button id="menu-like" class="menu-action-btn like" aria-pressed="false">👍 Like</button>
-        <button id="share-btn" class="action-btn share">🔗 Share</button>
-        <a href="https://ngl.link/zikkywins/tbh" target="_blank" rel="noopener noreferrer">
-        <button id="menu-comment" class="menu-action-btn comment">💬 Comment</button>
-        </a> 
-
-      <div class="menu-bottom">
-        <a id="menu-whatsapp" class="menu-whatsapp" href="https://wa.me/qr/OOIPRRHEXCUCE1" target="_blank" rel="noopener">
-          Contact Me on WhatsApp
-        </a>
-        <footer class="menu-footer">
-          <h6>&copy; 2025 My Simple Calculator Website. All Rights Reserved.</h6>
-        </footer>
-      </div>
+<!-- Navigation - REDESIGNED -->
+<nav id="primary-nav" class="primary-nav" aria-hidden="true">
+  <div class="nav-header">
+    <div class="nav-logo">
+      <i class="fas fa-brain"></i>
+      <span>ZIKKY•OS</span>
     </div>
-  </nav>
-
-  <!-- Overlay -->
-  <div id="menu-overlay" class="menu-overlay" hidden></div>
-
-  <!-- Custom Share Dialog -->
-  <div id="share-dialog" class="share-dialog" hidden>
-    <div class="share-dialog-content">
-      <div class="share-header">
-        <h3>Share ZikkyCal</h3>
-        <button id="close-share-dialog" class="close-btn">❌ </button>
-      </div>
-      
-      <div class="share-preview">
-        <div class="share-logo">Z</div>
-        <div class="share-details">
-          <div class="share-text">ZikkyCal Calculator</div>
-          <div class="share-description">Check out ZikkyCal, a smart calculator!</div>
-          <div class="share-url">https://github.com/zikky0001-droid/zikkycal.com</div>
-        </div>
-      </div>
-      
-      <div class="share-options-container">
-        <div class="share-section">
-          <h4>Share Options</h4>
-          <div class="share-options-grid">
-            <button class="share-option" data-share="send-devices">
-              <span class="share-icon">📱</span>
-              <span class="share-label">Share to Another Device</span>
-            </button>
-          </div>
-        </div>
-      </div>
-      
-      <div class="share-actions">
-        <button id="native-share-btn" class="share-action-btn primary">📱 Share via Device</button>
-        <button id="copy-link-btn" class="share-action-btn secondary">📋 Copy link</button>
-      </div>
-    </div>
+    <button class="nav-close"><i class="fas fa-times"></i></button>
   </div>
   
-  <!-- About Dialog -->
-<div id="about-dialog" class="about-dialog" hidden>
+  <div class="nav-wrap">
+    <ul id="primary-menu" class="menu" role="menu">
+      <li role="none"><a role="menuitem" href="#home"><i class="fas fa-home"></i> Home</a></li>
+      <li role="none"><a role="menuitem" href="https://github.com/zikky0001-droid/zikkycal.com" target="_blank"><i class="fas fa-code"></i> Services</a></li>
+      <li role="none"><a id="about-link" role="menuitem" href="#about"><i class="fas fa-user-secret"></i> About</a></li>
+      <li role="none"><a id="license-link" role="menuitem" href="#license"><i class="fas fa-scroll"></i> License</a></li>
+      <li role="none"><a id="contact-link" role="menuitem" href="#contact"><i class="fas fa-headset"></i> Contact</a></li>
+    </ul>
+
+    <div class="menu-actions">
+      <button id="menu-like" class="menu-action-btn like" aria-pressed="false">
+        <i class="fas fa-thumbs-up"></i> <span>Like</span>
+      </button>
+      <button id="share-btn" class="action-btn share">
+        <i class="fas fa-share-alt"></i> <span>Share</span>
+      </button>
+      <a href="https://ngl.link/zikkywins/tbh" target="_blank" rel="noopener noreferrer">
+        <button id="menu-comment" class="menu-action-btn comment">
+          <i class="fas fa-comment"></i> <span>Comment</span>
+        </button>
+      </a>
+    </div>
+
+    <div class="menu-bottom">
+      <a id="menu-whatsapp" class="menu-whatsapp" href="https://wa.me/message/WWTJGCPSLSQRP1?src=qr" target="_blank">
+        <i class="fab fa-whatsapp"></i> Contact me on WhatsApp
+      </a>
+
+      <div class="menu-social">
+        <a href="https://GitHub.com/zikky0001-droid"><i class="fab fa-github"></i></a>
+        <a href="https://discord.gg/S6jt3v7C"><i class="fab fa-discord"></i></a>
+        <a href="https://www.instagram.com/devzikky?igsh=MWg3dHJyaDRrdjQ0Mw=="><i class="fab fa-instagram"></i></a>
+        <a href="https://tiktok.com/@devzikky"><i class="fab fa-tiktok"></i></a>
+      </div>
+      <footer class="menu-footer">
+        <!-- Menu Date Display -->
+        <div class="menu-date-display">
+          <div class="menu-date-item">
+            <i class="fas fa-calendar-alt"></i>
+            <span id="menuDate"></span>
+          </div>
+          <div class="menu-date-item">
+            <i class="fas fa-clock"></i>
+            <span id="menuTime"></span>
+          </div>
+        </div>
+        
+        <div class="matrix-status">
+          <span class="status-dot"></span>
+          <span id="systemUptime">SYSTEM ONLINE</span>
+        </div>
+        
+        <h2>________</h2>
+        <h4 id="copyright-text">&copy; 2025 ZIKKY MATRIX CALCULATOR. All Rights Reserved.</h4>
+      </footer>
+    </div>
+  </div>
+</nav>
+
+<!-- Overlay -->
+<div id="menu-overlay" class="menu-overlay" hidden></div>
+
+<!-- Contact Container - FIXED to properly display contact.html -->
+<div id="contact-container" class="contact-container" hidden>
+  <div class="contact-header">
+    <h3><i class="fas fa-headset"></i> Contact ZIKKY</h3>
+    <button id="close-contact" class="close-btn"><i class="fas fa-times"></i></button>
+  </div>
+  <div id="contact-content" class="contact-content">
+    <!-- contact.html will be loaded here -->
+    <iframe id="contact-iframe" class="contact-iframe" src="about:blank" frameborder="0"></iframe>
+  </div>
+</div>
+
+<!-- Share Dialog -->
+<div id="share-dialog" class="share-dialog" hidden>
+  <div class="share-dialog-content">
+    <div class="share-header">
+      <h3><i class="fas fa-share-alt"></i> Share ZikkyCal</h3>
+      <button id="close-share-dialog" class="close-btn"><i class="fas fa-times"></i></button>
+    </div>
+    
+    <div class="share-preview">
+      <div class="share-logo">Z</div>
+      <div class="share-details">
+        <div class="share-text">DEV•ZIKKY Matrix Calculator</div>
+        <div class="share-description">🎉 ENTER THE MATRIX 🤍</div>
+        <div class="share-url">https://github.com/zikky0001-droid/zikkycal.com</div>
+      </div>
+    </div>
+    
+    <div class="share-actions">
+      <button id="native-share-btn" class="share-action-btn primary">
+        <i class="fas fa-share"></i> Share via Device
+      </button>
+      <button id="copy-link-btn" class="share-action-btn secondary">
+        <i class="fas fa-copy"></i> Copy link
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- About Dialog - MATRIX STYLE -->
+<div id="about-dialog" class="about-dialog matrix-dialog" hidden>
   <div class="about-dialog-content">
     <div class="about-header">
-      <h3>About This Project</h3>
-      <button id="close-about-dialog" class="close-btn">❌ </button>
+      <h3><i class="fas fa-user-secret"></i> >_ ABOUT.EXE</h3>
+      <button id="close-about-dialog" class="close-btn"><i class="fas fa-times"></i></button>
     </div>
-    <div class="about-content">
+    <div class="about-content matrix-text">
+      <pre class="ascii-art">
+  ███████╗██╗██╗  ██╗██╗  ██╗██╗   ██╗
+  ╚══███╔╝██║██║ ██╔╝██║ ██╔╝╚██╗ ██╔╝
+    ███╔╝ ██║█████╔╝ █████╔╝  ╚████╔╝ 
+   ███╔╝  ██║██╔═██╗ ██╔═██╗   ╚██╔╝  
+  ███████╗██║██║  ██╗██║  ██╗   ██║   
+  ╚══════╝╚═╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   
+      </pre>
       <div class="about-text">
-        <p><strong>About This Project</strong></p>
-        <p>This project is a lightweight, open-source initiative crafted with simplicity and accessibility in mind.</p>
-        <p><strong>NEW IMPROVEMENTS</strong></p>
-        <p><b>•</b>ADDED LIGHT MODE AND DARK MODE</p>
-        <p><b>•</b>NEWLY DESIGNED MENU INFO INTERFACE</p>
-        <p><b>•</b>PROFESSIONAL LICENSE TEXT WAS ADDED</p>
-        <p><b>•</b>STRUCECTED TO BE MORE USER-FRIENDLY </p>   
-        <p>Designed To Be Functional Both Offline And When On Internet Mode, Alongside A Seamless User-friendly Interface.</p>
-        <p>Built by Isaac ( Zikky), it aims to empower developers and learners with clean, modular code and thoughtful design.</p>
-        <p>Whether you're exploring, contributing, or customizing, you're welcome here.</p>
+        <p><span class="prompt">$></span> <span class="command">cat README.md</span></p>
+        <p class="output">[SYSTEM]:<h3>〘𝐃𝐄𝐕〙 〘𝐙𝐈𝐊𝐊𝐘〙 〘𝐌𝐀𝐓𝐑𝐈𝐗〙 〘𝐂𝐀𝐋𝐂𝐔𝐋𝐀𝐓𝐎𝐑〙</h3></p>
+        <p class="output">[VERSION]:<h3>[ 🇻 2.0.0 ]</h3></p>
+        <p class="output">[BUILD]: 2026 =-= (ZIKKY TECH)</p>
+        <p class="output">[STATUS]: QUANTUM-ENABLED | MATRIX-READY</p>
+        
+        <p class="output">[FEATURES]:</p>
+        <p class="output">  • ADVANCED TRIG FUNCTIONS 🔺</p>
+        <p class="output">  • LOGARITHMIC CALCULATIONS 📊</p>
+        <p class="output">  • MATRIX RAIN VISUALIZATION 🌧️</p>
+        <p class="output">  • GLOWING BUTTON FEEDBACK ✨</p>
+        <p class="output">  • QUANTUM THEME TOGGLE 🌓</p>
+        <p class="output">[MESSAGE]: Welcome to the matrix realm 🍻</p>
       </div>
     </div>
   </div>
 </div>
 
-  <!-- License Dialog -->
-  <div id="license-dialog" class="license-dialog" hidden>
-    <div class="license-dialog-content">
-      <div class="license-header">
-        <h3>License Information</h3>
-        <button id="close-license-dialog" class="close-btn">❌ </button>
-      </div>
-      <div class="license-content">
-        <div class="license-text">
-          <div class="mit-license-highlight">
-            <h4>MIT License with Attribution and Disclaimer</h4>
-          </div>
-          <h3><p><b>Copyright (c) 2025 (Zikky)</b></p></h3>
-          
-          <p>Permission is hereby granted, free of charge, to any person obtaining a copy
-          of this software and associated documentation files (the "Software"), to deal
-          in the Software without restriction, including without limitation the rights
-          to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-          copies of the Software, and to permit persons to whom the Software is
-          furnished to do so, subject to the following conditions:</p>
-          
-          <p>1. Attribution Required:
-          The above copyright notice and this permission notice shall be included in
-          all copies or substantial portions of the Software. You must give appropriate
-          credit to the original author (Isaac, aka Zikky), provide a link to the license,
-          and indicate if changes were made. You may do so in any reasonable manner,
-          but not in any way that suggests the licensor endorses you or your use.</p>
-          
-          <p>2. No Trademark License:
-          This license does not grant permission to use the trade names, trademarks,
-          service marks, or product names of the Licensor, except as required for
-          describing the origin of the Software and reproducing the content of the
-          copyright notice.</p>
-          
-          <p>3. No Warranty:
-          THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-          IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-          FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-          AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-          LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-          OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-          THE SOFTWARE.</p>
-          
-          <p>4. Use at Your Own Risk:
-          This software is intended for educational and personal use. It is not certified
-          for use in critical systems or environments where failure could result in
-          injury, loss, or damage. Use it at your own discretion.</p>
-          
-          <p>5. Contributions:
-          Contributions to this project are welcome. By submitting a pull request or
-          otherwise contributing, you agree to license your contributions under the
-          same license as this project.</p>
-          
-          <p>6. Jurisdiction:
-          This license shall be governed by and construed in accordance with the laws
-          of the jurisdiction in which the original author resides, unless otherwise
-          required by applicable law.</p>
-        </div>
+<!-- License Dialog - MATRIX STYLE -->
+<div id="license-dialog" class="license-dialog matrix-dialog" hidden>
+  <div class="license-dialog-content">
+    <div class="license-header">
+      <h3><i class="fas fa-scroll"></i> >_ LICENSE.EXE</h3>
+      <button id="close-license-dialog" class="close-btn"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="license-content matrix-text">
+      <pre class="ascii-art">
+╔══════════════════════════════════════╗
+║         MIT LICENSE                   ║
+║         YEAR =•= 2026                 ║
+╚══════════════════════════════════════╝
+      </pre>
+      <div class="license-text">
+        <p><span class="prompt">$></span> <span class="command">cat LICENSE</span></p>
+        <p class="output">MIT License with Matrix Attribution</p>
+        <p class="output">Copyright (c) 2025-<span id="license-year">2026</span> [ ZIKKY TECH ]</p>
+        <p class="output">Permission is hereby granted, free of charge, to any person</p>
+        <p class="output">obtaining a copy of this software and associated documentation</p>
+        <p class="output">Review (the "preview"), to check-out the Software design without restriction...</p>
+        <p class="output">[FULL LICENSE INFO ON GITHUB]</p>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- Header -->
-  <h2>ZIKKY'S<br>SIMPLE<br>CALCULATOR</h2>
+<!-- Main Calculator -->
+<h2>ZIKKY<br>MATRIX<br>CALCULATOR</h2>
 
-  <!-- Display -->
-  <input
-    type="text"
-    id="display"
-    aria-label="Calculator display"
-    inputmode="numeric"
-    pattern="[0-9+\-*/.²√^()]*"
-    readonly
-  />
+<!-- Display -->
+<input
+  type="text"
+  id="display"
+  aria-label="Calculator display"
+  inputmode="numeric"
+  pattern="[0-9+\-*/.²√^()]*"
+  readonly
+/>
 
-  <!-- Buttons -->
-  <div class="calculator-buttons" role="application" aria-label="Calculator buttons">
-    <button type="button" data-action="square">x²</button>
-    <button type="button" data-action="sqrt">√x</button>
-    <button type="button" data-action="power">xʸ</button>
-    <button type="button" data-action="paren">()</button>
-
-    <button type="button" data-value="7">7</button>
-    <button type="button" data-value="8">8</button>
-    <button type="button" data-value="9">9</button>
-    <button type="button" data-value="/">÷</button>
-
-    <button type="button" data-value="4">4</button>
-    <button type="button" data-value="5">5</button>
-    <button type="button" data-value="6">6</button>
-    <button type="button" data-value="*">×</button>
-
-    <button type="button" data-value="1">1</button>
-    <button type="button" data-value="2">2</button>
-    <button type="button" data-value="3">3</button>
-    <button type="button" data-value="-">−</button>
-
-    <button type="button" data-value="0">0</button>
-    <button type="button" data-value=".">.</button>
-    <button type="button" id="equals">=</button>
-    <button type="button" data-value="+">+</button>
-
-    <button type="button" id="clear" class="wide-button">Clear</button>
-    <button type="button" id="del" class="wide-button">Del</button>
+<!-- Scientific Panel Navigation -->
+<div class="sci-nav">
+  <button id="sci-prev" class="sci-arrow"><i class="fas fa-chevron-left"></i></button>
+  <div class="sci-indicators">
+    <span class="sci-dot active" data-index="0"></span>
+    <span class="sci-dot" data-index="1"></span>
+    <span class="sci-dot" data-index="2"></span>
   </div>
+  <button id="sci-next" class="sci-arrow"><i class="fas fa-chevron-right"></i></button>
+</div>
 
-  <script src="script.js"></script>
+<!-- Scientific Buttons Panel (Sliding) -->
+<div class="sci-panel-container">
+  <div class="sci-panel" id="sciPanel">
+    <!-- Panel 1: Trigonometry -->
+    <div class="sci-page active">
+      <button type="button" data-sci="sin">sin</button>
+      <button type="button" data-sci="cos">cos</button>
+      <button type="button" data-sci="tan">tan</button>
+      <button type="button" data-sci="asin">sin⁻¹</button>
+      <button type="button" data-sci="acos">cos⁻¹</button>
+      <button type="button" data-sci="atan">tan⁻¹</button>
+    </div>
+    <!-- Panel 2: Logarithms -->
+    <div class="sci-page">
+      <button type="button" data-sci="ln">ln</button>
+      <button type="button" data-sci="log">log</button>
+      <button type="button" data-sci="log2">log²</button>
+      <button type="button" data-sci="log10">log₁₀</button>
+      <button type="button" data-sci="exp">eˣ</button>
+      <button type="button" data-sci="10x">10ˣ</button>
+    </div>
+    <!-- Panel 3: Advanced -->
+    <div class="sci-page">
+      <button type="button" data-sci="fact">n!</button>
+      <button type="button" data-sci="pi">π</button>
+      <button type="button" data-sci="e">e</button>
+      <button type="button" data-sci="abs">MORE</button>
+      <button type="button" data-sci="round">COMING</button>
+      <button type="button" data-sci="floor">SOON...</button>
+    </div>
+  </div>
+</div>
+
+<!-- Basic Calculator Buttons -->
+<div class="calculator-buttons" role="application" aria-label="Calculator buttons">
+  <button type="button" data-action="square">x²</button>
+  <button type="button" data-action="sqrt">√x</button>
+  <button type="button" data-action="power">xʸ</button>
+  <button type="button" data-action="paren" id="parenBtn">( )</button>
+
+  <button type="button" data-value="7">7</button>
+  <button type="button" data-value="8">8</button>
+  <button type="button" data-value="9">9</button>
+  <button type="button" data-value="/">÷</button>
+
+  <button type="button" data-value="4">4</button>
+  <button type="button" data-value="5">5</button>
+  <button type="button" data-value="6">6</button>
+  <button type="button" data-value="*">×</button>
+
+  <button type="button" data-value="1">1</button>
+  <button type="button" data-value="2">2</button>
+  <button type="button" data-value="3">3</button>
+  <button type="button" data-value="-">−</button>
+
+  <button type="button" data-value="0">0</button>
+  <button type="button" data-value=".">.</button>
+  <button type="button" id="equals">=</button>
+  <button type="button" data-value="+">+</button>
+
+  <button type="button" id="clear" class="wide-button">CLEAR</button>
+  <button type="button" id="del" class="wide-button">DEL</button>
+</div>
+
+<!-- Glow Effect Container -->
+<div id="buttonGlow" class="button-glow"></div>
+
+<script src="script.js"></script>
 </body>
 </html>
