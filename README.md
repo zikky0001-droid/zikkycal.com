@@ -162,7 +162,7 @@
     <a href="https://discord.gg/S6jt3v7C"><img src="https://img.shields.io/badge/Discord-000000?style=for-the-badge&logo=discord&logoColor=00FFFF"/></a>
     <a href="https://www.instagram.com/devzikky"><img src="https://img.shields.io/badge/Instagram-000000?style=for-the-badge&logo=instagram&logoColor=00FFFF"/></a>
     <a href="https://tiktok.com/@devzikky"><img src="https://img.shields.io/badge/TikTok-000000?style=for-the-badge&logo=tiktok&logoColor=00FFFF"/></a>
-    <a href="https://youtube.com/Zikkystar"><img src="https://img.shields.io/badge/YouTube-000000?style=for-the-badge&logo=youtube&logoColor=00FFFF"/></a>
+    <a href="https://youtube.com/@devzikky"><img src="https://img.shields.io/badge/YouTube-000000?style=for-the-badge&logo=youtube&logoColor=00FFFF"/></a>
   </p>
 
   <!-- Original Channels Section - PRESERVED -->
